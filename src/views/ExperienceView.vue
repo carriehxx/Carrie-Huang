@@ -1,5 +1,5 @@
 <script setup>
-import About from '../components/theAbout.vue'
+import Experience from '../components/theExperience.vue'
 import theWelcome from '../components/theWelcome.vue'
 </script>
 
@@ -8,7 +8,7 @@ import theWelcome from '../components/theWelcome.vue'
     <theWelcome />
 
     <section>
-      <About />
+      <Experience />
     </section>
   </main>
 </template>
