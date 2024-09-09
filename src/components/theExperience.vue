@@ -157,6 +157,9 @@ span {
       )
       50%/100% 2px no-repeat;
   }
+
+  li:hover time::before {
+  }
 }
 
 @media (max-width: 1024px) {
