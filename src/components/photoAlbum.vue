@@ -2,10 +2,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const images = [
-  '../assets/photoCollection/photo1.jpg',
-  '../assets/photoCollection/photo3.jpg',
-  '../assets/photoCollection/photo4.jpg',
-  '../assets/photoCollection/photo5.jpg'
+  '/src/assets/photoCollection/photo1.jpg',
+  '/src/assets/photoCollection/photo3.jpg',
+  '/src/assets/photoCollection/photo4.jpg',
+  '/src/assets/photoCollection/photo5.jpg'
 ]
 
 const currentIdx = ref(0)
