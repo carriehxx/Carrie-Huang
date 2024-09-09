@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* semantic color variables for this project */
+:root {
+  --main-text-color: rgb(48, 48, 48);
+  --main-background-color: #000000;
+  --header-font-family: "Caveat", cursive;
+  --header-font-size: 2.5rem;
+  --header-font-weight: 700;
+  
+  --nav-background: rgb(0, 0, 0);
+
+  --section-font-family: "PT Serif", serif;
+  --section-font-size: 1.5rem;
+  --section-font-weight: 400;
+  --section-font-color: rgb(255, 255, 255);
+
+  --about-tag-color: rgb(74, 179, 228);
+  --about-background-color: rgb(1, 1, 18);
+
+  --experience-tag-color1: #93c5ff;
+  --experience-tag-color2: #1e5aa4;
+  --experience-content-background: rgb(255, 251, 0);
+  --experience-font-color: rgb(0, 65, 0);
+  --experience-divider-color: rgb(219, 238, 253);
+
+  --experience-background-gradient: linear-gradient(
+    90deg,
+    var(--experience-tag-color1) 0 50%,
+    var(--experience-tag-color2) 50% 100%
+  );
+  --experience-border-style: repeating-linear-gradient(
+    -90deg,
+    var(--experience-tag-color1) 0 5px,
+    transparent 0 10px
+  ) 50%/100% 2px no-repeat;
+
+  --experience-background-gradient2 : linear-gradient(90deg, #93c5ff 0%, #1e5aa4 100%);
+  --experience-background-gradient3 : linear-gradient(90deg, #1e5aa4 0%,  #93c5ff 100%);
+
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--main-text-color);
+  background-color: rgb(1, 1, 18);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: auto;
+}

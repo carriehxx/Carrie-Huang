@@ -71,7 +71,7 @@ const items = [
   {
     class: 'Resume',
     icon: 'bx bx-file',
-    link: '../assets/resume/Huang_Xin_HKU_Resume.pdf',
+    link: './assets/resume/Huang_Xin_HKU_Resume.pdf',
     label: 'Check my resume',
     background:
       'radial-gradient(49% 81% at 45% 47%, #FFFFFF45 0%, #073AFF00 100%),radial-gradient(113% 91% at 17% -2%, #009EFFFF 1%, #FF000000 99%),radial-gradient(142% 91% at 83% 7%, #00FFB9FF 1%, #FF000000 99%),radial-gradient(142% 91% at -6% 74%, #00A2FFFF 1%, #FF000000 99%),radial-gradient(142% 91% at 111% 84%, #00FF03FF 0%, #FF0000FF 100%)'

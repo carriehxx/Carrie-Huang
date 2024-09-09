@@ -10,22 +10,22 @@ import infoTag from '../components/infoTag.vue'
       <infoTag
         :tag="'HKUer'"
         :details="'I am going to be a Year 4 undergraduate at <a href=\'https://www.hku.hk/\' target=\'_blank\'>the University of Hong Kong</a>. My first major is Mathematics, and second major is Computer Sciences. I enjoy solving problems and learning new things!'"
-        :picture="'../assets/hku.webp'"
+        :picture="'./assets/hku.webp'"
       />
       <infoTag
         :tag="'Life Experiencer'"
         :details="'Apart from studying, I have many hobbies and interests including doing sports, baking and writing! I love playing badminton, frisbee, going hiking, making bread and cakes!!'"
-        :picture="'../assets/lifeExperiencer.png'"
+        :picture="'./assets/lifeExperiencer.png'"
       />
       <infoTag
         :tag="'Explorer'"
         :details="'I love trying novel things. This summer I had a research internship in Canada, learning and researching on things that I had never got in touch with before.'"
-        :picture="'../assets/explorer.webp'"
+        :picture="'./assets/explorer.webp'"
       />
       <infoTag
         :tag="'Learner'"
         :details="'Currently I am learning tools on frontend development, and I am also interested in learning more on Deep Learning and Artificial Intelligence.'"
-        :picture="'../assets/learner.jpg'"
+        :picture="'./assets/learner.jpg'"
       />
     </ul>
   </div>
