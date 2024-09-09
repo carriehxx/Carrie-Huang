@@ -5,7 +5,6 @@ window.addEventListener('scroll', () => {
   const header = document.querySelector('header')
   // header.classList.toggle('sticky', window.scrollY > 0)
 
-  // 获取滚动高度
   const scrollTop = window.scrollY
   // adjusting the image opacity according to the scrolled distance
   const opacity = 1 - scrollTop / window.innerHeight
