@@ -13,14 +13,14 @@ import infoTag from '../components/infoTag.vue'
         :picture="'/src/assets/hku.webp'"
       />
       <infoTag
-        :tag="'Thinker'"
-        :details="'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim sunt vel illo et ducimus tempora odit, atque molestias doloremque? Sint!'"
-        :picture="'/src/assets/thinker.png'"
+        :tag="'Life Experiencer'"
+        :details="'Apart from studying, I have many hobbies and interests including doing sports, baking and writing! I love playing badminton, frisbee, going hiking, making bread and cakes!!'"
+        :picture="'/src/assets/lifeExperiencer.png'"
       />
       <infoTag
         :tag="'Explorer'"
         :details="'I love trying novel things. This summer I had a research internship in Canada, learning and researching on things that I had never got in touch with before.'"
-        :picture="'/src/assets/experiencer.webp'"
+        :picture="'/src/assets/explorer.webp'"
       />
       <infoTag
         :tag="'Learner'"
