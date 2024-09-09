@@ -1,0 +1,17 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  width: 100vw;
+  height: 200vh;
+  font-weight: normal;
+}
+
+main {
+  
+}
+
+
+@media (hover: hover) {
+  
+}
