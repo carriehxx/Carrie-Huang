@@ -7,17 +7,17 @@ import theWelcome from '../components/theWelcome.vue'
 
 <template>
   <main>
-    <theWelcome />
+    <theWelcome id="home" />
 
-    <section>
+    <section id="about">
       <About />
     </section>
 
-    <section>
+    <section id="experience">
       <Experience />
     </section>
 
-    <section>
+    <section id="contact">
       <Contact />
     </section>
   </main>

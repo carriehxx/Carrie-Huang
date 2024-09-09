@@ -40,13 +40,13 @@ import infoTag from '../components/infoTag.vue'
   width: 100vw;
   font-family: var(--section-font-family);
   padding: 7rem 4rem;
-  color: rgb(0, 0, 0);
+  color: var(--section-font-color);
 }
 
 h2 {
   font-size: 4rem;
   font-weight: 400;
-  color: rgb(0, 0, 0);
+  color: var(--section-font-color);
 }
 
 p {

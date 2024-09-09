@@ -1,23 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 
-// 定义菜单切换状态
 const menuToggle = ref(false)
-// 定义窗口宽度
 const windowWidth = ref(window.innerWidth)
-// 定义导航栏
 const navbar = ref(null)
 
-// 计算是否为移动设备
 const isMobile = computed(() => windowWidth.value < 1024)
 
-// 监听窗口大小变化
 function handleResize() {
   windowWidth.value = window.innerWidth
 }
 
-// 监听页面滚动
 function handleScroll() {
   if (navbar.value && !isMobile.value) {
     const scrollTop = window.scrollY
@@ -26,13 +20,19 @@ function handleScroll() {
   }
 }
 
-// 组件挂载时添加监听事件
+watch(menuToggle, (newVal) => {
+  if (newVal) {
+    document.body.classList.add('no-scroll') // 禁用滚动
+  } else {
+    document.body.classList.remove('no-scroll') // 恢复滚动
+  }
+})
+
 onMounted(() => {
   window.addEventListener('resize', handleResize)
   window.addEventListener('scroll', handleScroll)
 })
 
-// 组件卸载时移除监听事件
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
   window.removeEventListener('scroll', handleScroll)
@@ -43,14 +43,15 @@ onUnmounted(() => {
   <div class="navbar" ref="navbar">
     <!-- 移动设备时显示菜单按钮 -->
     <div v-show="isMobile" @click="menuToggle = !menuToggle" class="menu">
-      <i class="bx bx-menu"></i>
+      <i class="bx bx-menu" v-if="!menuToggle"></i>
+      <i class="bx bx-x" v-else></i>
     </div>
     <!-- 非移动设备或菜单按钮被点击时显示导航栏 -->
-    <nav v-show="!isMobile || menuToggle">
-      <RouterLink to="/">HOME</RouterLink>
-      <RouterLink to="/about">ABOUT</RouterLink>
-      <RouterLink to="/experience">EXPERIENCE</RouterLink>
-      <RouterLink to="/contact">CONTACT</RouterLink>
+    <nav v-if="!isMobile || menuToggle" class="menuContent">
+      <RouterLink to="/" @click="menuToggle = false">HOME</RouterLink>
+      <RouterLink to="/about" @click="menuToggle = false">ABOUT</RouterLink>
+      <RouterLink to="/experience" @click="menuToggle = false">EXPERIENCE</RouterLink>
+      <RouterLink to="/contact" @click="menuToggle = false">CONTACT</RouterLink>
     </nav>
   </div>
 
@@ -58,14 +59,16 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
+.no-scroll {
+  overflow: hidden;
+}
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0.5rem 1.5rem;
   z-index: 1000;
-  transition: all 0.3s;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -74,44 +77,62 @@ onUnmounted(() => {
 .menu i {
   color: rgba(255, 255, 255, 0.955);
   font-size: 3rem;
+  transition: all 0.3s ease-in-out;
 }
 
 nav {
   width: 100%;
-  text-align: center;
-  justify-content: center;
-  font-family: var(--header-font-family);
-  font-size: 2rem;
-  transition: all 0.3s;
-
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: hsla(69, 32%, 92%, 0.9);
-  padding: 0.5rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--section-font-family);
+  font-size: 2rem;
+  background: var(--nav-background);
+  padding: 1.5rem;
   gap: 1.7rem;
   border-radius: 10px;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
 }
 
 nav a {
   font-weight: 1000;
   text-decoration: none;
-  color: rgb(136, 152, 103);
+  color: rgb(255, 255, 255);
 }
 
 nav a.router-link-exact-active {
-  color: rgb(40, 100, 12);
+  color: rgb(237, 255, 146);
 }
 
 nav a:hover {
-  color: rgb(40, 100, 12);
+  color: rgb(222, 250, 208);
   transform: scale(1.05);
 }
+
+nav.v-enter-active,
+nav.v-leave-active {
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+nav.v-enter-from,
+nav.v-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
 @media (min-width: 1024px) {
   .navbar {
     display: none;
     align-items: center;
     justify-content: right;
-    background-color: hsla(72, 76%, 90%, 0.815);
+    background-color: var(--nav-background);
+    height: auto;
+    padding: 0.5rem 1.5rem;
   }
 
   nav {
@@ -121,6 +142,7 @@ nav a:hover {
     flex-direction: row;
     background-color: transparent;
     padding: 0.6rem 0;
+    height: auto;
   }
 
   nav a.router-link-exact-active {
@@ -136,7 +158,7 @@ nav a:hover {
     padding: 0 2rem;
     border-left: 2px solid;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   nav a:first-of-type {

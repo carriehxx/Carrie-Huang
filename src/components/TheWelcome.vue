@@ -63,19 +63,13 @@ header {
     height: 100vh;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: center;
-    flex-wrap: wrap;
-  }
-
   .greeting {
     text-align: center;
     font-size: 4rem;
   }
 
   .greeting p {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 </style>
