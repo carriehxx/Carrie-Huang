@@ -10,23 +10,18 @@ const images = [
 
 const currentIdx = ref(0)
 
-// 定时器 ID，用于清除定时器
 let intervalId
 
-// 组件挂载时启动图像切换
 onMounted(() => {
   startImageRotation()
 })
 
-// 组件卸载时清除定时器
 onUnmounted(() => {
   clearInterval(intervalId)
 })
 
-// 启动图像切换的函数
 function startImageRotation() {
   intervalId = setInterval(() => {
-    // 更新当前图像索引
     currentIdx.value = (currentIdx.value + 1) % images.length
   }, 3000) // 每 3 秒切换一次图像
 }

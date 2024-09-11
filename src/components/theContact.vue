@@ -112,18 +112,17 @@ function startAutoScroll() {
       left: scrollAmount,
       behavior: 'smooth'
     })
-
-    // 检查是否滚动到末尾，如果是则回到原始的第一张
+    
     if (scrollAmount >= container.scrollWidth / 2) {
       setTimeout(() => {
         container.scrollTo({
-          left: 0, // 回到最初的位置
-          behavior: 'auto' // 瞬间跳回
+          left: 0, 
+          behavior: 'auto' 
         })
         scrollAmount = 0
-      }, 500) // 等待动画结束后跳转
+      }, 500)
     }
-  }, 3000) // 每隔3秒滚动一次
+  }, 3000)
 }
 
 function pauseAutoScroll() {
@@ -190,7 +189,7 @@ function pauseAutoScroll() {
   min-width: 300px;
   width: 45%;
   height: 100%;
-  margin-right: 15px; /* 增加卡片之间的间距 */
+  margin-right: 15px; 
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
