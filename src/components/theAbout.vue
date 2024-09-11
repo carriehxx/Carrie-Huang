@@ -57,4 +57,9 @@ p {
   width: 100%;
   padding-left: 0;
 }
+
+@media (min-width: 1024px){
+  .about {
+    padding: 7rem 4rem;
+  }
 </style>
