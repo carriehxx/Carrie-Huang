@@ -9,7 +9,7 @@ import infoTag from '../components/infoTag.vue'
     <ul class="personalInfo">
       <infoTag
         :tag="'HKUer'"
-        :details="'I am going to be a Year 4 undergraduate at <a href=\'https://www.hku.hk/\' target=\'_blank\'>the University of Hong Kong</a>. My first major is Mathematics, and second major is Computer Sciences. I enjoy solving problems and learning new things!'"
+        :details="'I am going to be a Year 4 undergraduate at <a href=\'https://www.hku.hk/\' style=\'text-decoration: none; color: black;\' target=\'_blank\'>the University of Hong Kong</a>. My first major is Mathematics, and second major is Computer Sciences. I enjoy solving problems and learning new things!'"
         :picture="'./assets/hku.webp'"
       />
       <infoTag
@@ -39,21 +39,22 @@ import infoTag from '../components/infoTag.vue'
   height: auto;
   width: 100vw;
   font-family: var(--section-font-family);
-  padding: 7rem 4rem;
+  padding: 7rem 2rem;
   color: var(--section-font-color);
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 400;
   color: var(--section-font-color);
 }
 
 p {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .personalInfo {
   width: 100%;
+  padding-left: 0;
 }
 </style>

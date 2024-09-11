@@ -37,12 +37,12 @@
 <style scoped>
 .experience {
   font-family: var(--section-font-family);
-  padding: 7rem 4rem;
+  padding: 7rem 2rem;
   width: 100vw;
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 2rem;
   text-align: left;
   margin-bottom: 3rem;
   color: white;
@@ -63,6 +63,7 @@ li {
     transform 0.3s ease,
     box-shadow 0.3s ease;
   position: relative;
+  font-size: 1rem;
 }
 
 li:nth-of-type(even) {
@@ -76,7 +77,7 @@ li:hover {
 
 time {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #555;
   margin-bottom: 10px;
@@ -157,9 +158,6 @@ span {
       )
       50%/100% 2px no-repeat;
   }
-
-  li:hover time::before {
-  }
 }
 
 @media (max-width: 1024px) {
@@ -181,7 +179,30 @@ span {
 
   li {
     padding: 10px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    animation: rotate 3s infinite;
+  }
+
+  li:nth-of-type(even) {
+    animation: inverseRotate 3s infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate3d(0, 1, 0, -20deg);
+    }
+    100% {
+      transform: rotate3d(0, 1, 0, 20deg);
+    }
+  }
+
+  @keyframes inverseRotate {
+    0% {
+      transform: rotate3d(0, 1, 0, 20deg);
+    }
+    100% {
+      transform: rotate3d(0, 1, 0, -20deg);
+    }
   }
 
   time {
@@ -191,17 +212,9 @@ span {
     text-align: center;
   }
 
-  li:nth-of-type(even),
-  li:nth-of-type(odd) time:before {
-    content: none;
-  }
-
   li:hover {
-    transform: rotate3d(0, 1, 0.2, 20deg);
-  }
-
-  li:nth-of-type(even):hover {
-    transform: rotate3d(0, 1, 0.2, -20deg);
+    animation-play-state: paused;
+    box-shadow: rgb(162, 235, 255) 0 0 20px;
   }
 }
 </style>

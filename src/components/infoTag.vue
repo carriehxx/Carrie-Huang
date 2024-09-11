@@ -73,23 +73,23 @@ li:nth-of-type(even):hover {
   background-color: black;
   border-radius: 0.25rem;
   padding: 0.5rem 1.5rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-top: -2.5rem;
   position: absolute;
-  left: -1.5rem;
+  left: -0.5rem;
   transform: rotate(4deg);
   box-shadow: -3px 3px 5px 0.5px #1994ffa7;
 }
 
 li:nth-of-type(even) h3 {
   left: auto;
-  right: -1.5rem;
+  right: -0.5rem;
   transform: rotate(-4deg);
 }
 
 .details-container p {
   margin: 3rem 2rem 3rem 2rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: black;
   line-height: 1.5;
 }
@@ -135,6 +135,7 @@ li:hover .tagHeading {
     border-radius: 0.25em;
     overflow: hidden;
     padding: 1em;
+    margin-left: -5rem;
   }
 
   li:nth-of-type(even) .image-container {
