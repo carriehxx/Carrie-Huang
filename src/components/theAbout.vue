@@ -62,4 +62,5 @@ p {
   .about {
     padding: 7rem 4rem;
   }
+}
 </style>

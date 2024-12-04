@@ -9,11 +9,13 @@ const images = [
 ]
 
 const currentIdx = ref(0)
+const imgbg = document.querySelector('.img-background')
 
 let intervalId
 
 onMounted(() => {
   startImageRotation()
+  // imgbg.style.animation = "fadeInOut 3s infinite"
 })
 
 onUnmounted(() => {
@@ -23,7 +25,7 @@ onUnmounted(() => {
 function startImageRotation() {
   intervalId = setInterval(() => {
     currentIdx.value = (currentIdx.value + 1) % images.length
-  }, 3000) // 每 3 秒切换一次图像
+  }, 3000)
 }
 </script>
 
@@ -47,6 +49,22 @@ function startImageRotation() {
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
+  opacity: .7;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: .2;
+  }
+  20% {
+    opacity: .4;
+  }
+  30% {
+    opacity: .7;
+  }
 }
 
 @media (min-width: 1024px) {

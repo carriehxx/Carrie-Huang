@@ -42,6 +42,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  mix-blend-mode: hard-light;
 
   font-family: var(--header-font-family);
   font-weight: 1200;
