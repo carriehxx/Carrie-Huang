@@ -2,8 +2,12 @@
   <div class="experience">
     <h2>My Experience</h2>
     <ul class="timeline" aria-label="Experience Timeline">
+      <li class="experienceBlock" aria-label="November 2024 - Research Assistant (HKU Business School)">
+        <time datetime="2024-08">November 2024 - March 2025</time>
+        <span>University of Hong Kong</span> - Research Assistant (HKU Business School)
+      </li>
       <li class="experienceBlock" aria-label="August 2024 - Saga Volunteer (Department of IT)">
-        <time datetime="2024-08">Aug 2024</time>
+        <time datetime="2024-08">July 2024 - June 2025</time>
         <span>Beyond The Pivot</span> - Saga Volunteer (Department of IT)
       </li>
       <li
@@ -18,9 +22,9 @@
         class="experienceBlock"
         aria-label="September 2023 - December 2023, Student Teaching Assistant at The University of Hong Kong"
       >
-        <time datetime="2023-09">Sept 2023 - Dec 2023</time>
+        <time datetime="2023-09">Sept 2023 - April 2025</time>
         <span>The University of Hong Kong</span> - Student Teaching Assistant (Department of
-        Mathematics)
+        Mathematics & Department of Computer Science)
       </li>
       <li
         class="experienceBlock"
@@ -35,6 +39,7 @@
 </template>
 
 <style scoped>
+
 .experience {
   font-family: var(--section-font-family);
   padding: 7rem 2rem;
@@ -42,7 +47,7 @@
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 5rem;
   text-align: left;
   margin-bottom: 3rem;
   color: white;
