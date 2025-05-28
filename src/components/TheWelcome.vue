@@ -18,7 +18,7 @@ window.addEventListener('scroll', () => {
 
     <div class="greeting">
       <h1>Hi, welcome to my profolio!</h1>
-      <p>I'm <span>Carrie Huang</span>, nice to meet you ~</p>
+      <p>I'm <span>Huang Xin</span>, nice to meet you ~</p>
     </div>
   </header>
 </template>

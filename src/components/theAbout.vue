@@ -3,36 +3,16 @@ import infoTag from '../components/infoTag.vue'
 </script>
 
 <template>
-  <div class="about">
+  <div class="about" id="about">
     <h2 class="aboutMe">About ME</h2>
-    <p class="intro">I am a ...</p>
-    <ul class="personalInfo">
-      <infoTag
-        :tag="'HKUer'"
-        :details="'I am going to be a Year 4 undergraduate at <a href=\'https://www.hku.hk/\' style=\'text-decoration: none; color: black;\' target=\'_blank\'>the University of Hong Kong</a>. My first major is Mathematics, and second major is Computer Sciences. I enjoy solving problems and learning new things!'"
-        :picture="'./assets/hku.webp'"
-      />
-      <infoTag
-        :tag="'Life Experiencer'"
-        :details="'Apart from studying, I have many hobbies and interests including doing sports, baking and writing! I love playing badminton, frisbee, going hiking, making bread and cakes!!'"
-        :picture="'./assets/lifeExperiencer.png'"
-      />
-      <infoTag
-        :tag="'Explorer'"
-        :details="'I love trying novel things. This summer I had a research internship in Canada, learning and researching on things that I had never got in touch with before.'"
-        :picture="'./assets/explorer.webp'"
-      />
-      <infoTag
-        :tag="'Learner'"
-        :details="'Currently I am learning tools on frontend development, and I am also interested in learning more on Deep Learning and Artificial Intelligence.'"
-        :picture="'./assets/learner.jpg'"
-      />
-    </ul>
+    <p class="intro">I am a recent graduate from the University of Hong Kong, majoring in Mathmatics and Computer Science. </p>
+    
   </div>
 </template>
 
 <style scoped>
 .about {
+  background-color: var(--section-background-color);
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -63,4 +43,5 @@ p {
     padding: 7rem 4rem;
   }
 }
+
 </style>

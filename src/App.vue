@@ -1,6 +1,25 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRoute } from 'vue-router'
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
+import About from '../src/components/theAbout.vue'
+import Experience from '../src/components/theExperience.vue'
+import Contact from '../src/components/theContact.vue'
+import theWelcome from '../src/components/TheWelcome.vue'
+
+const router = useRoute()
+
+function scrollToSection(sectionid) {
+  menuToggle.value = false
+  // 使用路由导航更新 hash
+  router.push({ hash: sectionid })
+  
+  // 滚动到对应元素
+  const element = document.querySelector(sectionid)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
 
 const menuToggle = ref(false)
 const windowWidth = ref(window.innerWidth)
@@ -31,6 +50,9 @@ watch(menuToggle, (newVal) => {
 onMounted(() => {
   window.addEventListener('resize', handleResize)
   window.addEventListener('scroll', handleScroll)
+  if (window.location.hash) {
+    scrollToSection(window.location.hash)
+  }
 })
 
 onUnmounted(() => {
@@ -48,12 +70,29 @@ onUnmounted(() => {
     </div>
     <!-- 非移动设备或菜单按钮被点击时显示导航栏 -->
     <nav v-if="!isMobile || menuToggle" class="menuContent">
-      <RouterLink to="/" @click="menuToggle = false">HOME</RouterLink>
-      <RouterLink to="/about" @click="menuToggle = false">ABOUT</RouterLink>
-      <RouterLink to="/experience" @click="menuToggle = false">EXPERIENCE</RouterLink>
-      <RouterLink to="/contact" @click="menuToggle = false">CONTACT</RouterLink>
+      <!-- <RouterLink to="/#home" @click="scrollToSection()">HOME</RouterLink>
+      <RouterLink to="/#about" @click="scrollToSection()">ABOUT</RouterLink>
+      <RouterLink to="/#experience" @click="scrollToSection()">EXPERIENCE</RouterLink>
+      <RouterLink to="/#contact" @click="scrollToSection()">CONTACT</RouterLink> -->
+      <a href="#" @click.prevent="scrollToSection('#home')">Home</a>
+      <a href="#" @click.prevent="scrollToSection('#about')">About</a>
+      <a href="#" @click.prevent="scrollToSection('#experience')">Experience</a>
+      <a href="#" @click.prevent="scrollToSection('#contact')">Contact</a>
     </nav>
   </div>
+    <theWelcome id="home" />
+
+    <section id="about">
+      <About />
+    </section>
+
+    <section id="experience">
+      <Experience />
+    </section>
+
+    <section id="contact">
+      <Contact />
+    </section>
 
   <RouterView />
 </template>
