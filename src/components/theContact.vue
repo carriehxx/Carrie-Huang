@@ -103,9 +103,7 @@ function duplicateCards() {
 function startAutoScroll() {
   const container = document.querySelector('.cardContainer')
   const cardWidth = document.querySelector('.card').offsetWidth
-  console.log(cardWidth)
   let scrollAmount = 0
-
   scrollInterval = setInterval(() => {
     scrollAmount += cardWidth
     container.scrollTo({
@@ -162,21 +160,24 @@ function pauseAutoScroll() {
 }
 
 .contactTitle {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: azure;
   font-weight: bold;
 }
 
 .cardContainer {
   display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  width: 100%;
   max-width: 100vw;
   height: 350px;
   position: relative;
+  border-radius: 15px;
 }
 
 .cardContainer::-webkit-scrollbar {
@@ -189,7 +190,7 @@ function pauseAutoScroll() {
   min-width: 300px;
   width: 45%;
   height: 100%;
-  margin-right: 15px; 
+  /* margin-right: 15px;  */
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
@@ -205,7 +206,7 @@ function pauseAutoScroll() {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   width: 100%;
   height: 85%;
   transition: all 0.3s ease-in-out;
@@ -225,6 +226,7 @@ function pauseAutoScroll() {
     width: 50%;
     left: 50%;
     transform: translate(-50%);
+    /* background: linear-gradient(to Bottom, transparent, rgba(187, 201, 173, 0.663), rgba(219, 242, 197, 0.911), rgba(187, 201, 173, 0.663), transparent); */
   }
 }
 </style>

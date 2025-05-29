@@ -32,6 +32,7 @@ header {
   align-items: left;
   justify-content: center;
   gap: 3rem;
+  padding: 0 1rem;
 }
 
 .greeting {

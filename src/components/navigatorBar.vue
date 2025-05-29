@@ -56,9 +56,19 @@ function handleScroll() {
   navbar.value.style.background = `rgba(var(--nav-background), ${opacity})`;
 }
 
+// handle background opecity when menu toggle
+function menubackground() {
+  if (window.innerWidth < 1024 && menuToggle.value) {
+    const navigatorBackground = document.querySelector('.navbar')
+    navigatorBackground.style.background = 'rgba(0, 0, 0, 0.445)';
+    navigatorBackground.style.backdropFilter = 'blur(2px)';
+  }
+}
+
 watch(menuToggle, (newVal) => {
   if (newVal) {
     document.body.classList.add('no-scroll') 
+    menubackground()
   } else {
     document.body.classList.remove('no-scroll')
   }
@@ -92,13 +102,15 @@ onUnmounted(() => {
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: start;
+  padding: 1rem 1rem;
 }
 
 .menu i {
   color: rgba(255, 255, 255, 0.955);
   font-size: 3rem;
   transition: all 0.3s ease-in-out;
+  width: 100vw;
 }
 
 nav {
@@ -110,8 +122,7 @@ nav {
   align-items: center;
   font-family: var(--section-font-family);
   font-size: 2rem;
-  /* background: var(--nav-background); */
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   gap: 1.7rem;
   border-radius: 10px;
   opacity: 1;

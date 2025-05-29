@@ -8,7 +8,8 @@
       </li>
       <li class="experienceBlock" aria-label="August 2024 - Saga Volunteer (Department of IT)">
         <time datetime="2024-08">July 2024 - June 2025</time>
-        <span>Beyond The Pivot</span> - Saga Volunteer (Department of IT)
+        <span>Beyond The Pivot</span> - Saga Project Front-end Developer (Department of IT) 
+        <a href="http://www.saga-xingguang.com/" target="_blank" class="linktoSAGA">SAGA Website</a>
       </li>
       <li
         class="experienceBlock"
@@ -24,7 +25,7 @@
       >
         <time datetime="2023-09">Sept 2023 - April 2025</time>
         <span>The University of Hong Kong</span> - Student Teaching Assistant (Department of
-        Mathematics & Department of Computer Science)
+        Mathematics and Department of Computer Science)
       </li>
       <li
         class="experienceBlock"
@@ -47,7 +48,7 @@
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 4rem;
   text-align: left;
   margin-bottom: 3rem;
   color: white;
@@ -89,6 +90,12 @@ time {
 }
 
 span {
+  font-weight: bold;
+}
+
+.linktoSAGA {
+  color: rgb(98, 156, 10);
+  text-decoration: none;
   font-weight: bold;
 }
 
