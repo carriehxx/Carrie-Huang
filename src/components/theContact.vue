@@ -143,8 +143,9 @@ function pauseAutoScroll() {
 
 <style scoped>
 .contact {
+  position: relative;
   max-width: 100vw;
-  width: 100vw;
+  width: 98vw;
   height: 100vh;
   margin: 0 auto;
   display: flex;
@@ -153,16 +154,33 @@ function pauseAutoScroll() {
   text-align: center;
   align-content: center;
   font-family: var(--section-font-family);
+  background-image: url(../assets/dancing.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.256);
+  backdrop-filter: blur(6px);
 }
 
 .contactMain {
   margin-bottom: 2rem;
+  z-index: 1;
 }
 
 .contactTitle {
   font-size: 3.5rem;
   color: azure;
   font-weight: bold;
+
 }
 
 .cardContainer {
@@ -178,6 +196,7 @@ function pauseAutoScroll() {
   height: 350px;
   position: relative;
   border-radius: 15px;
+
 }
 
 .cardContainer::-webkit-scrollbar {
