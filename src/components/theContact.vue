@@ -1,251 +1,166 @@
 <template>
   <div class="contact">
-    <div class="contactMain">
-      <h2 class="contactTitle">Get In Touch</h2>
-    </div>
-
-    <div class="cardContainer" ref="cardContainer">
-      <div
-        v-for="(item, index) in items"
-        :key="index"
-        class="card"
-        :style="{ background: item.background }"
-      >
-        <a :href="item.link" target="_blank" class="card-link">
-          <i :class="item.icon">{{ item.class }}</i>
-          {{ item.label }}
-        </a>
+    <h2>Contact</h2>
+    <div class="contact-list">
+      <div class="contact-item">
+        <i class="bx bx-envelope"></i>
+        <div class="contact-info">
+          <h3>Email</h3>
+          <a href="mailto:carriehuangx02@gmail.com">carriehuangx02@gmail.com</a>
+          <br>
+          <a href="mailto:carriehuangxin@foxmail.com">carriehuangxin@foxmail.com</a>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <i class="bx bx-phone"></i>
+        <div class="contact-info">
+          <h3>Phone</h3>
+          <span>(+852) 95725272</span>
+          <br>
+          <span>(+86) 18666513949</span>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <i class="bx bxl-linkedin"></i>
+        <div class="contact-info">
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/carriehuangxin/" target="_blank">linkedin.com/in/carriehuangxin/</a>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <i class="bx bxl-github"></i>
+        <div class="contact-info">
+          <h3>GitHub</h3>
+          <a href="https://github.com/carriehxx" target="_blank">github.com/carriehxx</a>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <i class="bx bxl-instagram"></i>
+        <div class="contact-info">
+          <h3>Instagram</h3>
+          <a href="https://www.instagram.com/carriehxx/" target="_blank">@carriehxx</a>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <i class="bx bx-file"></i>
+        <div class="contact-info">
+          <h3>Resume</h3>
+          <a href="./assets/resume/Huang_Xin_HKU_Resume.pdf" target="_blank">English version</a>
+          <br>
+          <a href="./assets/resume/黄鑫_香港大学_个人简历.pdf" target="_blank">Chinese version</a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-
-const currentIdx = ref(0)
-const items = [
-  {
-    class: 'Instagram',
-    icon: 'bx bxl-instagram',
-    link: 'https://www.instagram.com/carriehxx/',
-    label: '@carriehxx',
-    background:
-      'radial-gradient(49% 81% at 45% 47%, #FFED0345 0%, #073AFF00 100%),radial-gradient(113% 91% at 17% -2%, #FF1F00FF 1%, #FF000000 99%),radial-gradient(142% 91% at 83% 7%, #FF00D6FF 1%, #FF000000 99%),radial-gradient(142% 91% at -6% 74%, #FAFF00FF 1%, #FF000000 99%),radial-gradient(142% 91% at 111% 84%, #8D00FFFF 0%, #FF0000FF 100%)'
-  },
-  {
-    class: 'Linkedin',
-    icon: 'bx bxl-linkedin',
-    link: 'https://www.linkedin.com/in/carriehuangxin/',
-    label: '@Xin Huang',
-    background: 'linear-gradient(67deg, #0072b1 0%, #71C4FFFF 98%)'
-  },
-  {
-    class: 'Github',
-    icon: 'bx bxl-github',
-    link: 'https://github.com/carriehxx',
-    label: '@carriehxx',
-    background: '#FFFFFFFF'
-  },
-  {
-    class: 'Phone',
-    icon: 'bx bx-phone',
-    link: '#',
-    label: '(+852) 95725272',
-    background: 'linear-gradient(90deg, #71FF84FF 0%, #71C4FFFF 100%)'
-  },
-  {
-    class: 'Email',
-    icon: 'bx bx-envelope',
-    link: 'mailto:carriehuangx02@gmail.com',
-    label: 'carriehuangx02@gmail.com',
-    background: 'linear-gradient(90deg, #FFA971FF 0%, #FFF971FF 100%)'
-  },
-  {
-    class: 'Website',
-    icon: 'bx bx-link',
-    link: '#',
-    label: 'Carrie Huang',
-    background: 'linear-gradient(90deg, #A100FFFF 0%, #FFFFFFFF 100%)'
-  },
-  {
-    class: 'Resume',
-    icon: 'bx bx-file',
-    link: './assets/resume/Huang_Xin_HKU_Resume.pdf',
-    label: 'Check my resume',
-    background:
-      'radial-gradient(49% 81% at 45% 47%, #FFFFFF45 0%, #073AFF00 100%),radial-gradient(113% 91% at 17% -2%, #009EFFFF 1%, #FF000000 99%),radial-gradient(142% 91% at 83% 7%, #00FFB9FF 1%, #FF000000 99%),radial-gradient(142% 91% at -6% 74%, #00A2FFFF 1%, #FF000000 99%),radial-gradient(142% 91% at 111% 84%, #00FF03FF 0%, #FF0000FF 100%)'
-  }
-]
-
-let scrollInterval
-
-onMounted(() => {
-  duplicateCards()
-  pauseAutoScroll()
-  startAutoScroll()
-})
-
-onUnmounted(() => {
-  clearInterval(scrollInterval)
-})
-
-function duplicateCards() {
-  const container = document.querySelector('.cardContainer')
-  const cards = document.querySelectorAll('.card')
-  cards.forEach((card) => {
-    const cloneFirst = card.cloneNode(true)
-    const cloneLast = card.cloneNode(true)
-    container.appendChild(cloneFirst)
-  })
-}
-
-function startAutoScroll() {
-  const container = document.querySelector('.cardContainer')
-  const cardWidth = document.querySelector('.card').offsetWidth
-  let scrollAmount = 0
-  scrollInterval = setInterval(() => {
-    scrollAmount += cardWidth
-    container.scrollTo({
-      left: scrollAmount,
-      behavior: 'smooth'
-    })
-    
-    if (scrollAmount >= container.scrollWidth / 2) {
-      setTimeout(() => {
-        container.scrollTo({
-          left: 0, 
-          behavior: 'auto' 
-        })
-        scrollAmount = 0
-      }, 500)
-    }
-  }, 3000)
-}
-
-function pauseAutoScroll() {
-  const container = document.querySelector('.cardContainer')
-  container.addEventListener('mouseover', () => {
-    clearInterval(scrollInterval)
-  })
-  container.addEventListener('touchstart', () => {
-    clearInterval(scrollInterval)
-  })
-
-  container.addEventListener('mouseout', () => {
-    startAutoScroll()
-  })
-  container.addEventListener('touchend', () => {
-    startAutoScroll()
-  })
-}
+// Simple contact component - no complex JavaScript needed
 </script>
 
 <style scoped>
 .contact {
-  position: relative;
-  max-width: 100vw;
-  width: 98vw;
-  height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-content: center;
   font-family: var(--section-font-family);
-  background-image: url(../assets/dancing.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.contact::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.256);
-  backdrop-filter: blur(6px);
-}
-
-.contactMain {
-  margin-bottom: 2rem;
-  z-index: 1;
-}
-
-.contactTitle {
-  font-size: 3.5rem;
-  color: azure;
-  font-weight: bold;
-
-}
-
-.cardContainer {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  max-width: 100vw;
-  height: 350px;
-  position: relative;
-  border-radius: 15px;
-
-}
-
-.cardContainer::-webkit-scrollbar {
-  display: none;
-}
-
-.card {
-  display: flex;
-  flex: 0 0 auto;
-  min-width: 300px;
-  width: 45%;
-  height: 100%;
-  /* margin-right: 15px;  */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  align-items: center;
-  justify-content: center;
-  scroll-snap-align: start;
-  transition: transform 0.5s ease-in-out;
-}
-
-.card-link {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
+  padding: 7rem 2rem;
+  width: 100vw;
+  min-height: 100vh;
+  background: #0d131a;
+  color: white;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  font-size: 2rem;
+  align-items: center;
+}
+
+h2 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: white;
+}
+
+.contact-list {
+  max-width: 800px;
   width: 100%;
-  height: 85%;
-  transition: all 0.3s ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
-.card-link:hover {
-  font-size: 1.8rem;
+.contact-item {
+  background: rgba(13, 19, 26, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 138, 0, 0.3);
+  border-left: 4px solid #ff8a00;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.card-link i {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.contact-item:hover {
+  background: rgba(13, 19, 26, 0.9);
+  transform: translateY(-2px);
+}
+
+.contact-item i {
+  font-size: 2.5rem;
+  color: #ff8a00;
+  min-width: 3rem;
+}
+
+.contact-info h3 {
+  font-size: 1.4rem;
+  color: #ff8a00;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.contact-info a,
+.contact-info span {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ffffff;
 }
 
 @media (min-width: 1024px) {
-  .cardContainer {
-    width: 50%;
-    left: 50%;
-    transform: translate(-50%);
-    /* background: linear-gradient(to Bottom, transparent, rgba(187, 201, 173, 0.663), rgba(219, 242, 197, 0.911), rgba(187, 201, 173, 0.663), transparent); */
+  .contact {
+    padding: 7rem 4rem;
+  }
+  
+  .contact-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .contact-item {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 3rem;
+  }
+  
+  .contact-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
 }
 </style>

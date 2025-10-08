@@ -17,7 +17,7 @@ window.addEventListener('scroll', () => {
     <photoAlbum />
 
     <div class="greeting">
-      <h1>Hi, welcome to my profolio!</h1>
+      <h1>Hi, welcome to my portfolio!</h1>
       <p>I'm <span>Huang Xin</span>, nice to meet you ~</p>
     </div>
   </header>
@@ -103,68 +103,28 @@ header {
 
   .greeting p {
     font-size: 3rem;
-    overflow: hidden;
-    white-space: nowrap;
     padding: 0 2rem;
     margin: 0 auto;
     opacity: 0;
-    animation:
-      typingp 3.5s steps(40, end),
-      blink-caret 0.75s step-end infinite;
-    animation-delay: 3.5s;
-    animation-fill-mode: forwards;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1s;
   }
-
-  /* creating a typewriter effect for the greetings */
 
   .greeting h1 {
-    overflow: hidden;
-    white-space: nowrap;
     padding: 0 2rem;
     margin: 0 auto;
-    animation:
-      typingh1 3.5s steps(40, end),
-      blink-caret 0.75s step-end infinite;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
   }
 
-  @keyframes typingh1 {
+  @keyframes fadeInUp {
     0% {
-      width: 0%;
-    }
-    1% {
-      border-right: 8px solid yellow;
-    }
-    99.9% {
-      width: 100%;
-      border-right: 8px solid yellow;
+      opacity: 0;
+      transform: translateY(30px);
     }
     100% {
-      border: none;
-    }
-  }
-
-  @keyframes typingp {
-    0% {
-      width: 0%;
       opacity: 1;
-    }
-    1% {
-      border-right: 8px solid yellow;
-    }
-    100% {
-      width: 65%;
-      opacity: 1;
-      border-right: 8px solid yellow;
-    }
-  }
-
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: yellow;
+      transform: translateY(0);
     }
   }
 }

@@ -30,12 +30,7 @@ function startImageRotation() {
 </script>
 
 <template>
-  <img
-    v-if="images.length"
-    :src="images[currentIdx]"
-    alt="background image"
-    class="img-background"
-  />
+  <div class="img-background"></div>
 </template>
 
 <style scoped>
@@ -46,10 +41,7 @@ function startImageRotation() {
   z-index: -1;
   top: 0;
   left: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
-  opacity: .7;
+  background: #0d131a;
 }
 
 @keyframes fadeInOut {

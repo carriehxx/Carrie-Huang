@@ -7,7 +7,7 @@
     </div>
     <nav v-if="!isMobile || menuToggle" class="menuContent">
       <a href="#" @click.prevent="scrollToSection('#home')">Home</a>
-      <a href="#" @click.prevent="scrollToSection('#about')">About</a>
+      <a href="#" @click.prevent="scrollToSection('#education')">Education</a>
       <a href="#" @click.prevent="scrollToSection('#experience')">Experience</a>
       <a href="#" @click.prevent="scrollToSection('#contact')">Contact</a>
     </nav>
@@ -136,11 +136,11 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: rgb(237, 255, 146);
+  color: var(--accent-color);
 }
 
 nav a:hover {
-  color: rgb(222, 250, 208);
+  color: var(--accent-color);
   transform: scale(1.05);
 }
 

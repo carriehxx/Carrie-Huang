@@ -1,232 +1,198 @@
 <template>
   <div class="experience">
-    <h2>My Experience</h2>
-    <ul class="timeline" aria-label="Experience Timeline">
-      <li class="experienceBlock" aria-label="November 2024 - Research Assistant (HKU Business School)">
-        <time datetime="2024-08">November 2024 - March 2025</time>
-        <span>University of Hong Kong</span> - Research Assistant (HKU Business School)
-      </li>
-      <li class="experienceBlock" aria-label="August 2024 - Saga Volunteer (Department of IT)">
-        <time datetime="2024-08">July 2024 - June 2025</time>
-        <span>Beyond The Pivot</span> - Saga Project Front-end Developer (Department of IT) 
-        <a href="http://www.saga-xingguang.com/" target="_blank" class="linktoSAGA">SAGA Website</a>
-      </li>
-      <li
-        class="experienceBlock"
-        aria-label="June 2024 - August 2024, Research Intern at University of Alberta"
-      >
-        <time datetime="2024-06-01">Jun 2024 - Aug 2024</time>
-        <span>University of Alberta</span> - Research Intern (Department of Mathematical and
-        Statistical Science)
-      </li>
-      <li
-        class="experienceBlock"
-        aria-label="September 2023 - December 2023, Student Teaching Assistant at The University of Hong Kong"
-      >
-        <time datetime="2023-09">Sept 2023 - April 2025</time>
-        <span>The University of Hong Kong</span> - Student Teaching Assistant (Department of
-        Mathematics and Department of Computer Science)
-      </li>
-      <li
-        class="experienceBlock"
-        aria-label="September 2021 - June 2023, Cambridge-HKU Joint Education Track"
-      >
-        <time datetime="2021-09">Sept 2021 - June 2023</time>
-        <span>The University of Hong Kong</span> - Cambridge-HKU Joint Education Track (Faculty of
-        Science)
-      </li>
-    </ul>
+    <h2>Experience</h2>
+    <div class="experience-list">
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>AI Model & System Research Intern</h3>
+          <span class="duration">Sept 2025 - Present</span>
+        </div>
+        <div class="company">Centre for Artificial Intelligence and Robotics (CAIR), Hong Kong Institute of Science & Innovation, Chinese Academy of Sciences</div>
+        <div class="description">
+          <ul>
+            <li>Participated in research on continual learning algorithms for medical scenarios, assisting in addressing long-tail and forgetting problems.</li>
+            <li>Assisted in continual fine-tuning and reinforcement fine-tuning methods for MLLMs, including model architecture improvements and training strategy experiments.</li>
+            <li>Conducted experimental analysis and data organization & Supported the drafting of technical documents and research papers.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Algorithm Intern</h3>
+          <span class="duration">Jul 2025 - Aug 2025</span>
+        </div>
+        <div class="company">ZETA VISTA - IT Department, Shenzhen, China</div>
+        <div class="description">
+          <ul>
+            <li>Designed and developed a child face recognition and classification application leveraging FaceNet, enhancing photo-classification efficiency on the Family-School interaction platform.</li>
+            <li>Addressed high facial similarity challenges by implementing a pre-recognition image quality evaluator, utilizing an Inception-ResNet V1 model pre-trained on VGGFace2 and CASIA-Webface as the feature extractor, and applying adaptive thresholding.</li>
+            <li>Engineered an AI Agent Workflow based on DIFY to automate photo album generation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Research Assistant</h3>
+          <span class="duration">Nov 2024 - Mar 2025</span>
+        </div>
+        <div class="company">University of Hong Kong - HKU Business School</div>
+        <div class="description">
+          <ul>
+            <li>Analyzed complex mathematical problems and formalized proofs for theorems/lemmas within operations management models, optimizing contracts and strategic decisions under constraints.</li>
+            <li>Employed Linear Programming and optimization techniques (e.g., KKT conditions, Gradient Descent) to solve resource allocation and supply chain challenges.</li>
+            <li>Enhanced expertise in mathematical modeling and data-driven decision-making.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Algorithm Research Intern</h3>
+          <span class="duration">Jun 2024 - Aug 2024</span>
+        </div>
+        <div class="company">University of Alberta - Experiments with Graph Signal Processing</div>
+        <div class="description">
+          <ul>
+            <li>Investigated the feasibility of replacing Multi-Layer Perceptrons (MLPs) with Kolmogorov-Arnold Networks (KANs) – utilizing learnable univariate nonlinear functions instead of linear weights – through data analysis and experimental evaluation.</li>
+            <li>Conducted systematic Fourier and Wavelet analysis on user-product interaction data for recommendation system; compared B-spline, Fourier, and Wavelet bases within the KAN model, demonstrating wavelet bases' superior performance in enhancing model expressiveness.</li>
+            <li>Explored integrating hypergraphs with the KAN architecture to model complex user-product relationships, aiming to develop a recommendation system outperforming classical models (e.g., NGCF, LightGCN).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-
 .experience {
   font-family: var(--section-font-family);
   padding: 7rem 2rem;
   width: 100vw;
-}
-
-h2 {
-  font-size: 4rem;
-  text-align: left;
-  margin-bottom: 3rem;
+  background: #0d131a;
   color: white;
 }
 
-ul {
-  display: grid;
-  grid-template-columns: 1fr;
+h2 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: white;
+}
+
+.experience-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
-li {
-  list-style: none;
-  background: var(--experience-background-gradient2);
+.experience-item {
+  background: rgba(13, 19, 26, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 138, 0, 0.3);
+  border-left: 4px solid #ff8a00;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+  background: rgba(13, 19, 26, 0.9);
+  transform: translateY(-2px);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.experience-header h3 {
+  font-size: 2.2rem;
+  color: #ff8a00;
+  margin: 0;
+}
+
+.duration {
+  background: rgba(255, 138, 0, 0.2);
+  padding: 0.5rem 1rem;
   border-radius: 20px;
-  padding: 20px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  position: relative;
+  font-weight: 600;
+  border: 1px solid rgba(255, 138, 0, 0.5);
+  color: #ff8a00;
+}
+
+.company {
+  font-size: 1.2rem;
+  color: #aaaaaa;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.description {
   font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0;
 }
 
-li:nth-of-type(even) {
-  background: var(--experience-background-gradient3);
+.description ul {
+  margin: 0;
+  padding-left: 1.5rem;
 }
 
-li:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.description li {
+  margin-bottom: 0.8rem;
+  list-style-type: disc;
 }
 
-time {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 10px;
+.description li:last-child {
+  margin-bottom: 0;
 }
 
-span {
-  font-weight: bold;
-}
-
-.linktoSAGA {
-  color: rgb(98, 156, 10);
+.project-link {
+  color: #cccccc;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  border-bottom: 1px solid #cccccc;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #ffffff;
 }
 
 @media (min-width: 1024px) {
-  ul {
-    grid-template-columns: repeat(3, 320px);
-    justify-content: center;
-    background: var(--experience-background-gradient);
-    gap: 20px;
+  .experience {
+    padding: 7rem 4rem;
   }
-
-  li {
-    grid-column: span 2;
-    text-align: center;
-    background:
-      linear-gradient(var(--experience-content-background) 0 0) content-box,
-      linear-gradient(var(--experience-tag-color1) 0 0) padding-box,
-      linear-gradient(90deg, #0000 0% 70%, var(--experience-divider-color) 70% 100%) border-box;
-    line-height: 1.5;
-    font-size: 2rem;
-    border-radius: 60px;
-    padding: 20px;
-    position: relative;
+  
+  .experience-list {
+    gap: 2.5rem;
   }
-
-  li:nth-of-type(even) {
-    grid-column-end: -1;
-    background:
-      linear-gradient(var(--experience-content-background) 0 0) content-box,
-      linear-gradient(var(--experience-tag-color2) 0 0) padding-box,
-      linear-gradient(90deg, var(--experience-divider-color) 0 30%, #0000 30% 100%) border-box;
-  }
-
-  li:not(:first-child) {
-    margin-top: -20px;
-  }
-
-  time {
-    position: absolute;
-    right: calc(100% + 50px);
-    top: 50%;
-    width: 50%;
-    text-align: right;
-    color: var(--experience-content-background);
-  }
-
-  li:nth-of-type(odd) time {
-    position: absolute;
-    right: auto;
-    left: calc(100% + 50px);
-    text-align: left;
-  }
-
-  time:before {
-    content: '';
-    position: absolute;
-    height: 10px;
-    top: calc(50% - 5px);
-    right: calc(100% + 5px);
-    width: 65px;
-    background: var(--experience-border-style);
-  }
-
-  li:nth-of-type(even) time:before {
-    position: absolute;
-    right: auto;
-    left: calc(100% + 5px);
-    background: repeating-linear-gradient(
-        -90deg,
-        var(--experience-tag-color2) 0 5px,
-        transparent 0 10px
-      )
-      50%/100% 2px no-repeat;
+  
+  .experience-item {
+    padding: 2.5rem;
   }
 }
 
-@media (max-width: 1024px) {
-  ul {
-    grid-template-columns: 1fr;
-    padding: 0;
-    position: relative;
+@media (max-width: 768px) {
+  h2 {
+    font-size: 3rem;
   }
-
-  ul::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    width: 10px;
-    height: 120%;
-    background: linear-gradient(180deg, rgb(155, 98, 33) 0, #dedede00 100%);
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
-
-  li {
-    padding: 10px;
-    font-size: 1.3rem;
-    animation: rotate 3s infinite;
-  }
-
-  li:nth-of-type(even) {
-    animation: inverseRotate 3s infinite;
-  }
-
-  @keyframes rotate {
-    0% {
-      transform: rotate3d(0, 1, 0, -20deg);
-    }
-    100% {
-      transform: rotate3d(0, 1, 0, 20deg);
-    }
-  }
-
-  @keyframes inverseRotate {
-    0% {
-      transform: rotate3d(0, 1, 0, 20deg);
-    }
-    100% {
-      transform: rotate3d(0, 1, 0, -20deg);
-    }
-  }
-
-  time {
-    position: relative;
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
-
-  li:hover {
-    animation-play-state: paused;
-    box-shadow: rgb(162, 235, 255) 0 0 20px;
+  
+  .experience-header h3 {
+    font-size: 1.5rem;
   }
 }
 </style>

@@ -5,26 +5,28 @@
 
 /* semantic color variables for this project */
 :root {
-  --main-text-color: rgb(48, 48, 48);
-  --main-background-color: #222222;
+  --main-text-color: rgb(255, 255, 255);
+  --main-background-color: #0d131a;
   --header-font-family: "Caveat", cursive;
-  --header-font-size: 2.5rem;
+  --header-font-size: 3rem;
   --header-font-weight: 700;
   
-  --nav-background: #222222;
+  --nav-background: #0d131a;
   --section-font-family: "Handlee", cursive;
-  --section-font-size: 1.5rem;
+  --section-font-size: 1.8rem;
   --section-font-weight: 400;
   --section-font-color: rgb(255, 255, 255);
+  
+  --accent-color: #ff8a00;
 
-  --about-tag-color: rgb(74, 179, 228);
-  --about-background-color: #222222;
+  --about-tag-color: #ff8a00;
+  --about-background-color: #0d131a;
 
-  --experience-tag-color1: #a0efec;
-  --experience-tag-color2: #80f3a8;
-  --experience-content-background: rgb(253, 245, 155);
-  --experience-font-color: rgb(0, 65, 0);
-  --experience-divider-color: rgb(219, 238, 253);
+  --experience-tag-color1: #ff8a00;
+  --experience-tag-color2: #ff8a00;
+  --experience-content-background: rgba(13, 19, 26, 0.8);
+  --experience-font-color: rgb(255, 255, 255);
+  --experience-divider-color: #ff8a00;
 
   --experience-background-gradient: linear-gradient(
     to Right,
@@ -39,8 +41,8 @@
     transparent 0 10px
   ) 50%/100% 2px no-repeat;
 
-  --experience-background-gradient2 : linear-gradient(90deg, #93c5ff 0%, #1e5aa4 100%);
-  --experience-background-gradient3 : linear-gradient(90deg, #1e5aa4 0%,  #93c5ff 100%);
+  --experience-background-gradient2 : linear-gradient(90deg, rgba(255, 138, 0, 0.1) 0%, rgba(13, 19, 26, 0.8) 100%);
+  --experience-background-gradient3 : linear-gradient(90deg, rgba(13, 19, 26, 0.8) 0%, rgba(255, 138, 0, 0.1) 100%);
 
 }
 
@@ -56,7 +58,7 @@
 body {
   min-height: 100vh;
   color: var(--main-text-color);
-  background-color: rgb(1, 1, 18);
+  background-color: #0d131a;
   transition:
     color 0.5s,
     background-color 0.5s;
